@@ -1,0 +1,2 @@
+使用最新的英伟达的docker 容器可以快速提供相应的环境，非常适合进行测试使用。 docker run --name awq_nvidia --gpus all -it nvcr.io/nvidia/pytorch:23.10-py3
+无法在本机上使用这个代码,本机gpu架构为第一代NVIDIA Quadro P1000 · Pascal GPU 架构，在使用kernel进行编译的时候报错为： ptxas /tmp/tmpxft_000006f7_00000000-15_decoder_masked_multihead_attention.compute_52.ptx, line 750106; error   : Feature 'f16 arithemetic and compare instructions' requires .target sm_53 or higher 。意味着这个代码只能够在新的gpu硬件上使用，应该是在安培架构之上才可以。参考的issue包括：https://github.com/mit-han-lab/llm-awq/issues/25 
